@@ -1,6 +1,3 @@
-const devConfig = {
-  SENDGRID_API_KEY:
-    "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",
-};
+const devConfig = process.env.SENDGRID_API_KEY;
 
 module.exports = devConfig;
