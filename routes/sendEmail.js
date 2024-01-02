@@ -3,14 +3,14 @@ const sgMail = require("../service/sendgrid");
 const router = express.Router();
 
 router.post("/api/send", async (req, res) => {
-  const {titulo, nombre, phone, email, mensaje} = req.body;
+  const { titulo, nombre, phone, email, mensaje } = req.body;
   console.log(req.body);
 
   if (!nombre || !titulo || !phone || !email || !mensaje) {
     return res.status(400).send("Faltan datos obligatorios en la solicitud");
   }
   const msg = {
-    to: "fiorellaordaz19@gmail.com",
+    to: "jhon.macias.dev@gmail.com",
     from: "Solicitud de Servicios <jhonmacias08031994@gmail.com>",
     subject: `Solicitud de servicios de ${titulo}`,
     text: `${titulo}`,
@@ -30,7 +30,7 @@ router.post("/api/send", async (req, res) => {
     // console.log("Datos enviados a SendGrid:", msg);
     res
       .status(201)
-      .json({success: true, message: "Email enviado correctamente."});
+      .json({ success: true, message: "Email enviado correctamente." });
   } catch (err) {
     console.log(err);
     // Esto sirve para manejar los errores y acatarlos más rapidamente.
