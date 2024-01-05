@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 
 const corsOptions = {
-  origin: "https://demoliciones-ft-frontend.vercel.app",
+  origin: "*",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 204,
